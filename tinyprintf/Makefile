@@ -2,11 +2,11 @@ CC = gcc
 CFALGS = -Wextra -Wall -Werror -std=c99 -pedantic
 
 LIB = libtinyprintf.a
-SRC = tinyprintf.c
-OBJ = $(SRC:.o=.c)
+OBJ = tinyprintf.o
 
+all: $(LIB)$(OBJ)
 .PHONY: libtinyprintf
-libtinyprintf:$(LIB)($(OBJ))
+library : $(LIB)($(OBJ))
 .PHONY: clean
 clean:
 	$(RM) $(LIB)
